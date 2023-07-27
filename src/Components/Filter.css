@@ -1,0 +1,21 @@
+.rescount {
+  display: flex;
+  align-items: last baseline;
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: arial,Helvetica ,sans-serif;
+  padding:0px ;
+}
+
+
+.margin {
+  margin: 10px 95px;
+}
+
+.textNumber {
+  font-size: 28px;
+  color: #282c3f;
+  font-weight: 600;
+  font-family: arial,Helvetica ,sans-serif;
+}
+

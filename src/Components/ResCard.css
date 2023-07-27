@@ -1,0 +1,74 @@
+.image {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.resCard {
+  padding: 20px 20px 0px 20px;
+  text-align: left;
+  margin-bottom: 20px;
+  border: 0px;
+  font-size: 12px;
+  color: #535665;
+  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+  letter-spacing: 0cap;
+}
+
+.resCard:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.resName {
+  font-size: 17px;
+  font-weight: 500;
+  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+  letter-spacing: 0cap;
+  color: black;
+  text-decoration: none;
+
+ 
+}
+
+.resCardInfo {
+  padding: 0px;
+  margin: 0px 0px 0px 12px; 
+}
+
+  .resCardInfo li{
+    display: inline;
+    padding: 0px;
+  }
+
+  .resRating {
+    background-color: #48c479;
+    color: #fff;
+    height: 20px;
+    width: 43px;
+    padding: 0px 5px;
+    font-weight: 400;
+  }
+
+
+.card-body {
+  padding-left: 0px;
+}
+
+.promoted {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: rgb(58, 60, 65);
+  color:#fff;
+  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+    letter-spacing: 0;
+}
+
+.link {
+  color: #fff;
+}
+
+.link:hover {
+  color: #fff;
+}

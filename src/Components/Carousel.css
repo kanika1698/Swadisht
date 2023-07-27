@@ -1,0 +1,11 @@
+.carousel {
+  background-color: black;
+  
+}
+
+.resImage {
+  height: 260px;
+  width: 260px;
+  aspect-ratio: auto 260 / 260;
+  margin: 20px 20px;
+}
