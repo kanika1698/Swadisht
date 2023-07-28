@@ -1,3 +1,18 @@
 .text_align {
   text-align: right;
 }
+
+.imageBox {
+ width: 250px;
+ height: 160px;
+ padding: 20px;
+}
+
+.veg {
+  display: flex;
+  align-items: flex-start;
+}
+
+.menuCard:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+  }

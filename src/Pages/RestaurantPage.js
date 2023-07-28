@@ -4,6 +4,8 @@ import MenuCard from "../Components/MenuCard";
 import { BsFillClockFill } from "react-icons/bs";
 import { TbCoinRupee } from "react-icons/tb"
 import { AiFillStar } from "react-icons/ai"
+import { useParams } from "react-router-dom";
+import MenuShimmer from "./MenuShimmer";
 
 
 function RestaurantPage() {
@@ -19,6 +21,10 @@ function RestaurantPage() {
       slaString : ""
     }
   });
+
+  const {id} = useParams();
+
+  console.log("id",id);
 
   const [menuCard , setMenuCard] = useState([])
 
@@ -39,15 +45,17 @@ function RestaurantPage() {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=354531&submitAction=ENTER"
+      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=${id}`
     );
     const json = await data.json();
-    console.log(json);
+    console.log("json",json);
     setResData(json?.data?.cards[0]?.card?.card?.info);
-    setMenuCard(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+    setMenuCard(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards)
     console.log(json?.data?.cards[0]?.card?.card?.info);
     console.log(resData);
+    
   };
+  console.log("menu",menuCard);
 
   return (
     <div className="resPage container">
@@ -76,7 +84,7 @@ function RestaurantPage() {
         </div>
       </div>
       <hr className="seperator" />
-      <MenuCard menuCard={menuCard} />
+      {menuCard.length === 0? <MenuShimmer/> : <MenuCard menuCard={menuCard} /> }
     </div>
   );
 }

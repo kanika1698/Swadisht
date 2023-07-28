@@ -8,7 +8,7 @@ import { Restaurant_data } from "../Utility/Constants";
 
 const Home = () => {
   const [resData, setResData] = useState([]);
-  const [totalRestaurants, settotalRestaurants] = useState("");
+  const [cuisines, setCuisines] = useState([]);
   const [carouselData, setCarouselData] = useState([]);
 
 
@@ -20,11 +20,14 @@ const Home = () => {
     const data = await fetch(Restaurant_data);
     const json = await data.json();
     console.log(json);
-    setResData(json?.data?.cards[2]?.data?.data?.cards);
-    settotalRestaurants(json?.data?.cards[2]?.data?.data?.totalOpenRestaurants);
-    setCarouselData(json?.data?.cards[0]?.data?.data?.cards);
+    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.info);
+    console.log(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
+    setResData(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setCarouselData(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
+    setCuisines(json?.data?.cards[4]?.card?.card?.facetList[1]?.facetInfo);
     
   };
+  console.log("cuisines",cuisines);
 
   console.log(resData);
 
@@ -35,7 +38,7 @@ const Home = () => {
       
       <Carousel carouselData={carouselData} />
       {/* <Filters totalRes={totalRestaurants} resData={resData}/> */}
-      <Body resData={resData} totalRes={totalRestaurants}/>
+      <Body resData={resData} cuisines={cuisines}/>
     </div>
   );
 }

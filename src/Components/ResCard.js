@@ -11,14 +11,21 @@ function ResCard(props) {
     name,
     cuisines,
     avgRating,
-    costForTwoString,
-    slaString,
+    costForTwo,
     cloudinaryImageId,
-  } = res?.data;
+  } = res;
+
+  const {
+    slaString
+  } = res?.sla
+
+  const {
+    restaurantId
+  } = res?.feeDetails
 
   return (
     <>
-    <Link to={"/restaurant"} className="link">
+    <Link to={{ pathname: `/restaurant/${restaurantId}`}}  className="link">
     <div class="card  resCard" style={{ width: 20 + "rem" }}>
         <img
           src={Image_Url + cloudinaryImageId}
@@ -41,7 +48,7 @@ function ResCard(props) {
                 <li>{slaString}</li>
               </div>
               <div className="col-5">
-                <li>{costForTwoString}</li>
+                <li>{costForTwo}</li>
               </div>
             </ul>
           </div>
