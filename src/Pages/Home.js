@@ -25,7 +25,7 @@ const Home = () => {
     setCuisines(json?.data?.cards[4]?.card?.card?.facetList[1]?.facetInfo);
     
   };
-  console.log("cuisines",cuisines);
+  
 
   console.log(resData);
 
