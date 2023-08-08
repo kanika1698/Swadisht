@@ -1,3 +1,16 @@
 .text_align {
   text-align: right;
 }
+
+.imageBox {
+ max-width: 60%;
+ height: auto;
+ padding: 20px;
+ margin-top: 20px;
+}
+
+.veg {
+  display: flex;
+  align-items: flex-start;
+}
+

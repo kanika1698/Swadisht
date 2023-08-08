@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Testing
+- react testing library - build on top of DOM testing library
+-jest is framework for js testing , react testing library use jest behind the scenes.
+-jest uses babel
+instal babel dependencies
+configure babel
+jest configuration => jest --init
+
+-jsdom -> env to run testcases its like a browser

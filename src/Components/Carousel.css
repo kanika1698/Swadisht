@@ -4,8 +4,8 @@
 }
 
 .resImage {
-  height: 260px;
-  width: 260px;
+  height: auto;
+  width: 25%;
   aspect-ratio: auto 260 / 260;
   margin: 20px 20px;
 }

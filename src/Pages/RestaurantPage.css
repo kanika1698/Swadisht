@@ -68,3 +68,13 @@
   justify-content: end;
   
   }
+
+  .menumargin {
+    margin: 30px 200px 2px 200px
+  }
+
+  .clearbtn {
+    width: 10rem;
+    
+  }
+
