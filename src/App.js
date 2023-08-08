@@ -1,23 +1,21 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
-import Home from "./Pages/Home";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-//import RestaurantPage from "./Pages/RestaurantPage";
+import { Provider } from "react-redux";
+import appStore from "./Utility/appStore";
 
 
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-    <Header/>
-     <Outlet/>
-     <Footer/>
-    
-    </div>
+     <Provider store={appStore}>
+      <div className="App">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+     </Provider>
   );
-}
-
-
+};
 
 export default App;

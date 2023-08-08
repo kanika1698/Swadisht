@@ -6,13 +6,11 @@ import { BsSearch } from "react-icons/bs";
 import { FaFilter } from "react-icons/fa";
 
 function Body(props) {
-  const { resData} = props;
+  const { resData } = props;
   const [searchData, setSearchData] = useState("");
   const [filterData, setfilterData] = useState([]);
   const [search, setSearch] = useState(false);
   const [topRated, setTopRated] = useState(false);
-
-  console.log("log", resData);
 
   return (
     <>
@@ -29,10 +27,16 @@ function Body(props) {
               value={searchData}
               onChange={(e) => {
                 setSearchData(e.target.value);
-                let listOfRes = resData.filter((res) =>
-                  (res?.info?.name?.toLowerCase()
-                  .includes(searchData.toLowerCase().trim()) 
-                  || console.log(res?.info?.cuisines)?.includes(searchData.toLowerCase().trim()))
+                let listOfRes = resData.filter(
+                  (res) =>
+                    res?.info?.name
+                      ?.toLowerCase()
+                      .includes(searchData.toLowerCase().trim()) ||
+                    res?.info?.cuisines?.filter((cuisine) =>
+                      cuisine
+                        .toLowerCase()
+                        .includes(searchData.toLowerCase().trim())
+                    ).length > 0
                 );
                 console.log(searchData);
                 console.log(listOfRes);
@@ -85,7 +89,7 @@ function Body(props) {
         </nav>
       </div>
 
-      <div className="container  row">
+      <div className="container   row">
         {search === false || searchData === ""
           ? resData?.map((res) => (
               <div className=" col-sm-3 col-lg-3">

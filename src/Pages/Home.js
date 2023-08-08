@@ -20,8 +20,6 @@ const Home = () => {
     const data = await fetch(Restaurant_data);
     const json = await data.json();
     console.log(json);
-    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.info);
-    console.log(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
     setResData(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setCarouselData(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
     setCuisines(json?.data?.cards[4]?.card?.card?.facetList[1]?.facetInfo);

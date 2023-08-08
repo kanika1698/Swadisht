@@ -17,7 +17,7 @@ function Carousel(props) {
                 
                   <img
                   src={Image_Url + carousel.imageId}
-                  class="d-block w-10 resImage"
+                  class=" resImage"
                   alt="..."
                 />
                 

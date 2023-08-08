@@ -5,8 +5,7 @@ import { BsFillClockFill } from "react-icons/bs";
 import { TbCoinRupee } from "react-icons/tb"
 import { AiFillStar } from "react-icons/ai"
 import { useParams } from "react-router-dom";
-import MenuShimmer from "./MenuShimmer";
-
+import Shimmer from "./Shimmer";
 
 function RestaurantPage() {
   const [resData, setResData] = useState({
@@ -60,14 +59,14 @@ function RestaurantPage() {
   return (
     <div className="resPage container">
       <div className="resInfo row">
-        <div className="col-6 mb-3">
+        <div className="col-6 ">
           <p className="mb-0 mt-5 res_name">{name}</p>
           <p className="mb-1 res_cuisines">{cuisines}</p>
-          <p className="res_cuisines">
+          <p className="res_cuisines pb-">
             {locality} , {lastMileTravelString}
           </p>
         </div>
-        <div className="mb-3 mt-5 col-6 resInfo">
+        <div className="mb-3 mt-5 col-6  resInfo">
           <div className="res_ratings">
             <p><AiFillStar/> {avgRatingString}</p>
             <p>{totalRatingsString}</p>
@@ -84,8 +83,11 @@ function RestaurantPage() {
         </div>
       </div>
       <hr className="seperator" />
-      {menuCard.length === 0? <MenuShimmer/> : <MenuCard menuCard={menuCard} /> }
+      <div className="menumargin">
+      {menuCard.length === 0? <Shimmer/> : <MenuCard menuCard={menuCard} /> }
+      </div>
     </div>
+
   );
 }
 export default RestaurantPage;
