@@ -1,13 +1,16 @@
 import logo from "../Utility/logo.jpg";
 import "./Header.css";
-import {  BsCart4, BsFillPostcardHeartFill } from "react-icons/bs";
+import {  BsCart4, BsFillPostcardHeartFill , BsWifi , BsWifiOff } from "react-icons/bs";
 import { IoHome } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import useOnline from "../Utility/useOnline";
 
 
 
 const Header = () => {
+
+  const online = useOnline();
 
   const cartItems = useSelector((store)=>store.cart.items)
   console.log(cartItems);
@@ -45,6 +48,15 @@ const Header = () => {
               <Link class="nav-link" to={"/about"}>
                 <BsFillPostcardHeartFill size={28} />
               </Link>
+            </li>
+            <li class="nav-item mx-3">
+              <Link class="nav-link">
+              {
+                online === true ? <BsWifi color="green" size={28} title="online"/> : <BsWifiOff color="red" size={28} title="online"/>
+              }
+
+              </Link>
+              
             </li>
           </ul>
         </div>
