@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Body.css";
-import ResCard from "./ResCard";
+import ResCard , {withPromoted} from "./ResCard";
 import "./Filter.css";
 import { BsSearch } from "react-icons/bs";
 import { FaFilter } from "react-icons/fa";
@@ -11,7 +11,7 @@ function Body(props) {
   const [filterData, setfilterData] = useState([]);
   const [search, setSearch] = useState(false);
   const [topRated, setTopRated] = useState(false);
-
+  // const ResCardPromoted = withPromoted(ResCard)
   return (
     <>
       <div className="margin">

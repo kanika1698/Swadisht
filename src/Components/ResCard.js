@@ -25,7 +25,7 @@ function ResCard(props) {
 
   return (
     <>
-    <Link to={{ pathname: `/restaurant/${restaurantId}`}}  className="link">
+    <Link to={{ pathname: `/restaurant/${restaurantId}`}} className="link">
     <div class="card  resCard" style={{ width: 20 + "rem" }}>
         <img
           src={Image_Url + cloudinaryImageId}
@@ -59,5 +59,19 @@ function ResCard(props) {
     </>
   );
 }
+
+//Higher Order Component
+
+export const withPromoted = (ResCard) => {
+  return ({res}) => {
+    return (
+      <div>
+        <label>OFF</label>
+        <ResCard res={res}/>
+      </div>
+    )
+  }
+}
+
 
 export default ResCard;

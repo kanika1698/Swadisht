@@ -50,6 +50,7 @@ function RestaurantPage() {
     console.log("json",json);
     setResData(json?.data?.cards[0]?.card?.card?.info);
     setMenuCard(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards)
+    console.log(menuCard);
     console.log(json?.data?.cards[0]?.card?.card?.info);
     console.log(resData);
     

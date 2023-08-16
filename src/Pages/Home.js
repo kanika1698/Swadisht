@@ -23,10 +23,7 @@ const Home = () => {
     setResData(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setCarouselData(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
     setCuisines(json?.data?.cards[4]?.card?.card?.facetList[1]?.facetInfo);
-    
   };
-  
-
   console.log(resData);
 
   return resData?.length === 0 ? (
